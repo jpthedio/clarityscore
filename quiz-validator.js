@@ -12,6 +12,7 @@
     name: '[by-quizvalidate-element="name"]',
     email: '[by-quizvalidate-element="email"]',
     phone: '[by-quizvalidate-element="phone"]',
+    company: '[by-quizvalidate-element="company"]',
     button: '[by-quizvalidate-element="button"]',
   };
 
@@ -42,7 +43,7 @@
   };
 
   const updateNextButton = () => {
-    const allValid = ['name', 'email', 'phone'].every(key => elements[key].checkValidity());
+    const allValid = ['name', 'email', 'phone', 'company'].every(key => elements[key].checkValidity());
     toggleNextButton(allValid);
   };
 
@@ -54,7 +55,7 @@
   };
 
   // EVENT LISTENERS
-  ['name', 'email', 'phone'].forEach(key => {
+  ['name', 'email', 'phone', 'company'].forEach(key => {
     elements[key].addEventListener("input", () => handleValidation(elements[key]));
   });
 
